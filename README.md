@@ -23,7 +23,15 @@ Autentisering skjer via Maskinporten med et selvgenerert RSA-nøkkelpar — inge
 ```bash
 git clone https://github.com/ditt-brukernavn/wenche.git
 cd wenche
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -e .
+```
+
+Husk å aktivere det virtuelle miljøet hver gang du åpner en ny terminal:
+
+```bash
+source .venv/bin/activate
 ```
 
 ## Oppsett
