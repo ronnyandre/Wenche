@@ -1,0 +1,64 @@
+# Wenche — konfigurasjonsfil
+# Kopier denne til config.yaml og fyll inn dine egne verdier.
+# config.yaml skal IKKE legges i git (se .gitignore).
+
+selskap:
+  navn: "OFL Holding AS"
+  org_nummer: "123456789"         # 9 siffer uten mellomrom
+  daglig_leder: "Ole Fredrik Larsen"
+  styreleder: "Ole Fredrik Larsen"
+  forretningsadresse: "Gateveien 1, 0001 Oslo"
+  stiftelsesaar: 2020
+  aksjekapital: 30000             # NOK
+
+regnskapsaar: 2025
+
+# --- Resultatregnskap ---
+resultatregnskap:
+  driftsinntekter:
+    salgsinntekter: 0
+    andre_driftsinntekter: 0
+
+  driftskostnader:
+    loennskostnader: 0
+    avskrivninger: 0
+    andre_driftskostnader: 5500   # Bank- og regnskapsgebyrer
+
+  finansposter:
+    utbytte_fra_datterselskap: 0
+    andre_finansinntekter: 0
+    rentekostnader: 0
+    andre_finanskostnader: 0
+
+# --- Balanse ---
+balanse:
+  eiendeler:
+    anleggsmidler:
+      aksjer_i_datterselskap: 100000
+      andre_aksjer: 0
+      langsiktige_fordringer: 0
+    omloepmidler:
+      kortsiktige_fordringer: 0
+      bankinnskudd: 1200
+
+  egenkapital_og_gjeld:
+    egenkapital:
+      aksjekapital: 30000
+      overkursfond: 0
+      annen_egenkapital: -34300   # Negativ ved underskudd
+    langsiktig_gjeld:
+      laan_fra_aksjonaer: 105500  # Private lån fra eier
+      andre_langsiktige_laan: 0
+    kortsiktig_gjeld:
+      leverandoergjeld: 0
+      skyldige_offentlige_avgifter: 0
+      annen_kortsiktig_gjeld: 0
+
+# --- Aksjonærregister ---
+aksjonaerer:
+  - navn: "Ole Fredrik Larsen"
+    fodselsnummer: "01010112345"  # 11 siffer
+    antall_aksjer: 100
+    aksjeklasse: "ordinære"
+    utbytte_utbetalt: 0           # NOK utbetalt i regnskapsåret
+    innbetalt_kapital_per_aksje: 300  # Aksjekapital / antall aksjer
