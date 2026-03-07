@@ -25,12 +25,12 @@ else:
 # Disse må verifiseres mot Altinn sin app-katalog.
 APPS = {
     "aarsregnskap": {
-        "org": "brreg",
-        "app": "aarsregnskap",                        # TODO: verifiser eksakt appnavn
+        "org": "brg",
+        "app": "aarsregnskap-vanlig-202406",          # RR-0002, sist oppdatert 2025-09
     },
     "aksjonaerregister": {
         "org": "skd",
-        "app": "aksjonaerregisteroppgave",            # TODO: verifiser eksakt appnavn
+        "app": "a2-1051-241111",                      # RF-1086, opprettet 2025-11
     },
     "skattemelding": {
         "org": "skd",
