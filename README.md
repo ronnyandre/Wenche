@@ -183,7 +183,7 @@ Test uten innsending først (anbefalt):
 wenche send-aarsregnskap --dry-run
 ```
 
-`--dry-run` lagrer det genererte iXBRL-dokumentet lokalt slik at du kan inspisere det.
+`--dry-run` lagrer de genererte XML-dokumentene lokalt slik at du kan inspisere dem.
 
 Send inn til Brønnøysundregistrene:
 
@@ -250,7 +250,6 @@ Alternativer (generer-skattemelding):
 
 Bidrag er velkomne. Åpne gjerne en issue eller pull request. Særlig nyttig:
 
-- Verifisering av iXBRL-format mot Brønnøysundregistrenes gjeldende taksonomi
 - Implementasjon av automatisk skattemeldingsinnsending (krever systemleverandør-registrering hos Skatteetaten)
 - Testing mot Altinn testmiljø (tt02)
 
