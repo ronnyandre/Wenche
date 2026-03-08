@@ -524,7 +524,7 @@ with fane_generer:
                 )
 
     with col3:
-        if st.button("Last ned RF-1086 XML", use_container_width=True):
+        if st.button("Last ned aksjonærregisteroppgave", use_container_width=True):
             regnskap = bygg_regnskap()
             antall = int(st.session_state["antall_aksjonaerer"])
             aksjonaerer = [
