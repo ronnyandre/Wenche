@@ -35,7 +35,7 @@ from wenche import aarsregnskap as ar_modul
 from wenche import aksjonaerregister as akr_modul
 from wenche import auth
 from wenche.altinn_client import AltinnClient
-from wenche.xbrl import generer_ixbrl
+from wenche.brg_xml import generer_hovedskjema, generer_underskjema
 
 # ---------------------------------------------------------------------------
 # Initialisering av session_state fra config.yaml (ved oppstart / refresh)
@@ -519,12 +519,19 @@ with fane_dokumenter:
                 for f in feil:
                     st.error(f)
             else:
-                ixbrl = generer_ixbrl(regnskap)
+                orgnr = st.session_state["org_nummer"]
+                aar = int(st.session_state["regnskapsaar"])
                 st.download_button(
-                    "Last ned årsregnskap.html",
-                    data=ixbrl,
-                    file_name=f"aarsregnskap_{int(st.session_state['regnskapsaar'])}_{st.session_state['org_nummer']}.html",
-                    mime="application/xhtml+xml",
+                    "Last ned hovedskjema (XML)",
+                    data=generer_hovedskjema(regnskap),
+                    file_name=f"aarsregnskap_{aar}_{orgnr}_hovedskjema.xml",
+                    mime="application/xml",
+                )
+                st.download_button(
+                    "Last ned underskjema (XML)",
+                    data=generer_underskjema(regnskap),
+                    file_name=f"aarsregnskap_{aar}_{orgnr}_underskjema.xml",
+                    mime="application/xml",
                 )
 
     with col3:
